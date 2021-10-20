@@ -23,7 +23,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav">
-                <% @sections.each do |sec| %>
+                <% @nav.each do |sec| %>
 
                 <li class="nav-item dropdown">
                   <a class="nav-link more dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -48,10 +48,17 @@
       </header>
     <main>
       <br>
+      <!-- <#%= link_to "New", new_section_path, class: "btn btn-primary" %> -->
+      <!-- <#%= link_to "Edit", edit_section_path, class: "btn btn-primary" %> -->
+      <div class="container text-center">
+        <%= link_to "Home", pages_show_path, class: "btn btn-primary" %>
+        <%= link_to "All Sections", sections_path, class: "btn btn-primary" %>
+      </div>
+      <br>
       <%= yield %>
       <br>
     </main>
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
       <footer class="d-flex flex-wrap justify-content-center align-items-center border-top border-5 border-dark">
 
         <p class="col-md-4 mb-0 more">&copy; 2021 Harmony Club of Worcester</p>
@@ -67,7 +74,7 @@
           <li class="nav-item"><a href="#" class="nav-link px-2 more">Members</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 more">Contact Us</a></li>
         </ul>
-        <br>
+        <br><br>
       </footer>
     </div>
   </body>

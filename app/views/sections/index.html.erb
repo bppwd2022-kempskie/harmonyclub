@@ -1,0 +1,45 @@
+<div class="container text-center">
+  <h1>All Sections</h1>
+  <br>
+  <%= link_to "New", new_section_path, class: "btn btn-primary" %>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Position</th>
+        <th scope="col">Title</th>
+        <th scope="col">Location</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sections.each do |a| %>
+      <tr>
+        <td><%= a.position %></td>
+        <td><%= a.title %></td>
+        <td><%= a.location %></td>
+        <td>
+          <%= link_to "View", section_path(a.id), class: "btn btn-primary" %>
+          <%= link_to "Edit", edit_section_path(a.id), class: "btn btn-primary" %>
+          <%= link_to "Delete", section_path(a.id),
+                      class: "btn btn-primary",
+                      method: :delete,
+                      data: {confirm: "Are you sure?"} %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<!--
+<ul>
+  <#% @sections.each do |a| %>
+  <li>
+    <a href="/sections/<#%= a.id %>">
+      <#%= a.title %>
+    </a>
+  </li>
+  <#% end %>
+</ul>
+-->
