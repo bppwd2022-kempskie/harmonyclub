@@ -1,22 +1,37 @@
-<div class="container">
-  <%= form_with model: @section do |form| %>
-    <div>
-      <%= form.label :position, class:"form-label" %><br>
-      <%= form.text_field :position, class:"form-control" %>
-    </div>
-    <br>
-    <div>
-      <%= form.label :title, class:"form-label" %><br>
-      <%= form.text_field :title, class:"form-control" %>
-    </div>
-    <br>
-    <div>
-      <%= form.label :location, class:"form-label" %><br>
-      <%= form.text_field :location, class:"form-control" %>
-    </div>
-    <br>
-    <div>
-      <%= form.submit "Submit", class: "btn btn-primary" %>
+<%= form_with(model: section) do |form| %>
+  <% if section.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(section.errors.count, "error") %> prohibited this section from being saved:</h2>
+
+      <ul>
+        <% section.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
-</div>
+  <br>
+  <div class="field">
+    <%= form.label :location, class:"form-label" %>
+    <%= form.text_field :location, class:"form-control" %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :title, class:"form-label" %>
+    <%= form.text_field :title, class:"form-control" %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :visible, class:"form-check-label" %>
+    <%= form.check_box :visible, class:"form-check-input" %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :position, class:"form-label" %>
+    <%= form.number_field :position, class:"form-control" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= form.submit "Submit", class:"btn btn-custom" %>
+  </div>
+<% end %>

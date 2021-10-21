@@ -1,4 +1,7 @@
 <div class="container">
   <h1>New Section</h1>
-  <%= render "form", section: @section %>
+
+  <%= render 'form', section: @section %>
+  <br>
+  <%= link_to 'Back', sections_path, class:"btn btn-custom" %>
 </div>

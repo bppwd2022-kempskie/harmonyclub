@@ -1,4 +1,8 @@
 <div class="container">
-  <h1>Edit Section</h1>
-  <%= render "form", section: @section %>
+  <h1>Editing Section</h1>
+
+  <%= render 'form', section: @section %>
+  <br>
+  <%= link_to 'Show', @section, class:"btn btn-custom" %> |
+  <%= link_to 'Back', sections_path, class:"btn btn-custom" %>
 </div>

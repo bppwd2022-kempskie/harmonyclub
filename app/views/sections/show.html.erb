@@ -1,6 +1,26 @@
 <div class="container text-center">
-  <h2><u>Section Information:</u></h2>
-  <h4>POSITION: <i><%= @section.position %></i></h4>
-  <h4>TITLE: <i><%= @section.title %></i></h4>
-  <h4>LOCATION: <i><%= @section.location %></i></h4>
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Location:</strong>
+    <%= @section.location %>
+  </p>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @section.title %>
+  </p>
+
+  <p>
+    <strong>Visible:</strong>
+    <%= @section.visible %>
+  </p>
+
+  <p>
+    <strong>Position:</strong>
+    <%= @section.position %>
+  </p>
+
+  <%= link_to 'Edit', edit_section_path(@section), class:"btn btn-custom" %> |
+  <%= link_to 'Back', sections_path, class:"btn btn-custom" %>
 </div>

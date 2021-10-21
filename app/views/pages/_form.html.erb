@@ -1,0 +1,52 @@
+<%= form_with(model: page) do |form| %>
+  <% if page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+        <% page.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <br>
+  <div class="field">
+    <%= form.label :title, class:"form-label" %>
+    <%= form.text_field :title, class:"form-control"%>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :section_id, class:"form-label" %>
+    <%= form.number_field :section_id, class:"form-control" %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :page_type, class:"form-label" %>
+    <%= form.text_field :page_type, class:"form-control" %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :permalink, class:"form-label" %>
+    <%= form.text_field :permalink, class:"form-control" %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :visible, class:"form-check-label" %>
+    <%= form.check_box :visible, class:"form-check-input" %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :position, class:"form-label" %>
+    <%= form.number_field :position, class:"form-control" %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :content, class:"form-label" %>
+    <%= form.text_area :content, class:"form-control" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= form.submit "Submit", class:"btn btn-custom" %>
+  </div>
+<% end %>

@@ -1,0 +1,16 @@
+<div class="container text-center">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @album.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @album.description %>
+  </p>
+
+  <%= link_to 'Edit', edit_album_path(@album), class:"btn btn-custom" %> |
+  <%= link_to 'Back', albums_path, class:"btn btn-custom" %>
+</div>

@@ -1,0 +1,27 @@
+<%= form_with(model: sponsor) do |form| %>
+  <% if sponsor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sponsor.errors.count, "error") %> prohibited this sponsor from being saved:</h2>
+
+      <ul>
+        <% sponsor.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <br>
+  <div class="field">
+    <%= form.label :title, class:"form-label" %>
+    <%= form.text_field :title, class:"form-control" %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :website, class:"form-label" %>
+    <%= form.text_area :website, class:"form-control" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= form.submit "Submit", class:"btn btn-custom" %>
+  </div>
+<% end %>

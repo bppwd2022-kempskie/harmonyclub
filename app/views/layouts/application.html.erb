@@ -45,14 +45,21 @@
             </div>
           </div>
         </nav>
+        <div class="align-self-center">
+          <% if current_admin %>
+            <%= link_to "Log Out", destroy_admin_session_path, class:"btn btn-custom", :method => :delete %>
+          <% else %>
+            <%= link_to "Sign In", new_admin_session_path, class:"btn btn-custom" %>
+          <% end %>
+        </div>
       </header>
     <main>
       <br>
       <!-- <#%= link_to "New", new_section_path, class: "btn btn-primary" %> -->
       <!-- <#%= link_to "Edit", edit_section_path, class: "btn btn-primary" %> -->
       <div class="container text-center">
-        <%= link_to "Home", pages_show_path, class: "btn btn-primary" %>
-        <%= link_to "All Sections", sections_path, class: "btn btn-primary" %>
+        <!-- <#%= link_to "Home", pages_show_path, class: "btn btn-primary" %>
+        <#%= link_to "All Sections", sections_path, class: "btn btn-primary" %> -->
       </div>
       <br>
       <%= yield %>
