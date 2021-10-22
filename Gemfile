@@ -21,9 +21,15 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+# Login system
 gem 'devise'
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+
+# Use Active Storage variant - PHOTOS
+gem 'image_processing', '~> 1.2'
+
+# Text Editor Gem
+gem 'tinymce-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

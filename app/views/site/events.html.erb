@@ -1,0 +1,16 @@
+<div class="container">
+  <h1 class="text-center"><u>All Events</u></h1>
+  <br>
+  <% @events.each do |e| %>
+    <div class="row text-center mb-5">
+      <div class="col col-lg-6">
+        <h2><%= e.title %></h2>
+        <%= raw e.details %>
+      </div>
+      <div class="col col-lg-6">
+        <p><%= image_tag e.photo %></p>
+      </div>
+    </div>
+  <% end %>
+  <!-- <br><br> -->
+</div>

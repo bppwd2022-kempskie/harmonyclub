@@ -43,9 +43,14 @@
   <br>
   <div class="field">
     <%= form.label :content, class:"form-label" %>
-    <%= form.text_area :content, class:"form-control" %>
+    <%= form.text_area :content, class:"form-control tinymce" %>
+    <%= tinymce %>
   </div>
   <br>
+  <div class="field">
+    <%= form.label :destination, class:"form-label" %>
+    <%= form.text_field :destination, class:"form-control" %>
+  </div>
   <div class="actions">
     <%= form.submit "Submit", class:"btn btn-custom" %>
   </div>

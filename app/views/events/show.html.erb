@@ -8,8 +8,19 @@
 
   <p>
     <strong>Details:</strong>
-    <%= @event.details %>
+    <%= raw @event.details %>
   </p>
+
+  <% if @event.photo.attached? %>
+    <div>
+      <p><strong>Photo:</strong></p>
+      <%= image_tag @event.photo %>
+    </div>
+  <% else %>
+    <div>
+      <p>PHOTO IS NOT ATTACHED</p>
+    </div>
+  <% end %>
   <br>
   <%= link_to 'Edit', edit_event_path(@event), class:"btn btn-custom" %> |
   <%= link_to 'Back', events_path, class:"btn btn-custom" %>

@@ -18,7 +18,13 @@
   <br>
   <div class="field">
     <%= form.label :details, class:"form-label" %>
-    <%= form.text_area :details, class:"form-control" %>
+    <%= form.text_area :details, class:"form-control tinymce" %>
+    <%= tinymce %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :photo, class:"form-label" %>
+    <%= form.file_field :photo %>
   </div>
   <br>
   <div class="actions">
