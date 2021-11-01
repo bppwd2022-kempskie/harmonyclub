@@ -1,0 +1,12 @@
+<div class="text-center">
+    <h4><%= @albums.title %><h4>
+
+    <% @albums.photos.each do |a| %>
+        <div>
+            <%= image_tag a.photo %>
+            <br>
+        </div>
+        <br>
+    <% end %>
+
+</div>

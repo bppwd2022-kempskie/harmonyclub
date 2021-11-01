@@ -16,6 +16,12 @@
     <%= @photo.description %>
   </p>
 
+  <p>
+    <strong>Photo:</strong>
+    <br>
+    <%= image_tag @photo.photo %>
+  </p>
+
   <%= link_to 'Edit', edit_photo_path(@photo), class:"btn btn-custom" %> |
   <%= link_to 'Back', photos_path, class:"btn btn-custom" %>
 </div>
